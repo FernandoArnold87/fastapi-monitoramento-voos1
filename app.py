@@ -4,7 +4,9 @@ from typing import List, Optional
 import time
 
 app = FastAPI()
-
+@app.get("/")
+def home():
+    return {"message": "Bem-vindo ao monitoramento de voos! Use /docs para acessar a API."}
 fake_flights_db = [
     {"origin": "FRA", "destination": "FLN", "price": 600, "date": "2026-02-10"},
     {"origin": "FRA", "destination": "FLN", "price": 550, "date": "2026-02-15"},
